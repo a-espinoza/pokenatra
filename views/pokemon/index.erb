@@ -1,0 +1,8 @@
+<h2>All Pokemons</h2>
+<% @pokemon.each do |pokemon|%>
+<p><%= pokemon.name %></p>
+<p><%= pokemon.poke_type %></p>
+<p><%= pokemon.cp %></p>
+<img src =<%= pokemon.img_url %>>
+
+<% end %>
