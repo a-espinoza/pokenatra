@@ -4,3 +4,9 @@
 <p><%= @pokemon.poke_type %></p>
 <p><%= @pokemon.cp %></p>
 <p><img src ="<%= @pokemon.img_url %>"</p>
+
+
+<form action="/pokemon/<%= @pokemon.id %>" method="post">
+ <input type="hidden" name="_method" value="delete">
+ <button type="submit">KILL POKEMON</button>
+</form>
