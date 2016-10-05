@@ -43,3 +43,41 @@ get '/pokemon/:id' do
   @pokemon = Pokemon.find(params[:id])
   erb :"pokemon/show"
 end
+
+#
+
+get '/team' do
+  @team = Team.all
+  erb :"team/index"
+end
+
+get '/team/new' do
+  erb :"team/new"
+end
+
+post '/team' do
+  @team = Team.create(params[:team])
+  redirect "/team/#{@team.id}"
+end
+
+get "/team/:id/edit" do
+  @team = Team.find(params[:id])
+  erb(:"team/edit")
+end
+
+put '/team/:id' do
+  @team = Team.find(params[:id])
+  @team.update(params[:team])
+  redirect "/team/#{@team.id}"
+end
+
+delete '/team/:id' do
+  @team = Team.find(params[:id])
+  @team.destroy
+  redirect "/team"
+end
+
+get '/team/:name' do
+ @team = Team.find_by(name: params[:name].capitalize)
+ erb :"team/show"
+end

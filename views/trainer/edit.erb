@@ -1,0 +1,11 @@
+<form action="/trainer/<%= @trainer.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+
+  <label for="trainer[name]">trainer's Name:</label>
+  <input name="trainer[name]" value="<%= @trainer.name %>">
+
+  <label for="trainer[level]">trainer's Type:</label>
+  <input name="trainer[level]" value="<%= @trainer.level %>">
+
+  <input type="submit" value="Update">
+</form>
